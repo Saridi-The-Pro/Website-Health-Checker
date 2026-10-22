@@ -7,6 +7,7 @@ name = "website-health-checker"
 version = "0.1.0"
 description = "A lightweight CLI tool to check website status and health"
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.8"
 authors = [
     {name="Saridi", email="saridi.lim1103@gmail.com"}
@@ -14,5 +15,8 @@ authors = [
 dependencies = [
     "requests>=2.28.0"
 ]
+[project.urls]
+Homepage = "https://github.com/Saridi-The-Pro/Website-Health-Checker"
+
 [project.scripts]
 health-check = "website_health_checker.checker:main"
