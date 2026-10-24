@@ -1,7 +1,7 @@
 import time
 import requests
 
-ERRORS = {
+ERRORS:dict = {
     requests.exceptions.MissingSchema: "Unknown domain protocol!",
     requests.exceptions.InvalidSchema: "Invalid protocol schema!",
     requests.exceptions.InvalidURL: "Invalid URL!",
@@ -13,9 +13,9 @@ ERRORS = {
     requests.exceptions.ChunkedEncodingError: "Connection broken during data transfer!"
 }
 
-HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
+HEADERS:dict = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
-def check_website(url: str, timeout: int = 5):
+def check_website(url: str, timeout: int = 5) -> dict:
     clean_url = url.strip()
     if not clean_url:
         return {
@@ -47,6 +47,13 @@ def check_website(url: str, timeout: int = 5):
             "response_time_ms": None,
             "error": error_msg
         }
+
+def check_multiple_website(urls: list[str], timeout: int = 5) -> list:
+    results = []
+    for url in urls:
+        results.append(check_website(url, timeout=timeout))
+    return results
+
 if __name__ == "__main__":
     url = input("URL: ")
     try:
