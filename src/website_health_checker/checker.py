@@ -53,15 +53,3 @@ def check_multiple_website(urls: list[str], timeout: int = 5) -> list:
     for url in urls:
         results.append(check_website(url, timeout=timeout))
     return results
-
-if __name__ == "__main__":
-    url = input("URL: ")
-    try:
-        result = check_website(url=url)
-        print(f"URL: {result['url']}")
-        print(f"Status: {result['status']}")
-        print(f"Status Code: {result['status_code']}")
-        print(f"Response Time: {result['response_time_ms']}")
-        print(f"Error: {result['error']}")
-    except Exception as e:
-        print(f"Error: {e}")
