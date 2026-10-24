@@ -48,7 +48,7 @@ def check_website(url: str, timeout: int = 5) -> dict:
             "error": error_msg
         }
 
-def check_multiple_website(urls: list[str], timeout: int = 5) -> list:
+def check_multiple_websites(urls: list[str], timeout: int = 5) -> list:
     results = []
     for url in urls:
         results.append(check_website(url, timeout=timeout))
