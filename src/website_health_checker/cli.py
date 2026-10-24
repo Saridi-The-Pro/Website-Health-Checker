@@ -1,4 +1,4 @@
-import argsparse
+import argparse
 from website_health_checker.checker import check_multiple_websites
 
 def main():
