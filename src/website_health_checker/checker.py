@@ -17,6 +17,14 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/
 
 def check_website(url: str, timeout: int = 5):
     clean_url = url.strip()
+    if not clean_url:
+        return {
+            "url": url,
+            "status": "error",
+            "status_code": None,
+            "response_time_ms": None,
+            "error": "URL cannot be empty!"
+        }
     if not clean_url.startswith(("http://", "https://")):
         clean_url = "https://" + clean_url
     try:
