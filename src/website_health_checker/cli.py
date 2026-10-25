@@ -30,8 +30,10 @@ def main():
     args = parser.parse_args()
     results = check_multiple_websites(args.urls, timeout=args.timeout)
     for result in results:
-        status_tag = "HEALTHY" if result['status'] == "healthy" else "UNHEALTHY"
-        print(f"[{status_tag}] {result['url']} - {result['response_time_ms']}ms (code: {result['status_code']})")
+        status_tag = result['status'].upper()
+        response_time_ms = f"{result['response_time_ms']}ms" if result['response_time_ms'] is not None else "N/A"
+        status_info = f"code: {result['status_code']}" if result['status_code'] is not None else f"reason: {result['error']}"
+        print(f"[{status_tag}] {result['url']} - {response_time_ms} ({status_info})")
 
 if __name__ == "__main__":
     main()
