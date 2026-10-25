@@ -15,7 +15,7 @@ ERRORS:dict = {
 
 HEADERS:dict = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
-def check_website(url: str, timeout: int = 5) -> dict:
+def check_website(url: str, timeout: float = 5.0) -> dict:
     clean_url = url.strip()
     if not clean_url:
         return {
@@ -48,7 +48,7 @@ def check_website(url: str, timeout: int = 5) -> dict:
             "error": error_msg
         }
 
-def check_multiple_websites(urls: list[str], timeout: int = 5) -> list:
+def check_multiple_websites(urls: list[str], timeout: float = 5.0) -> list:
     results = []
     for url in urls:
         results.append(check_website(url, timeout=timeout))
