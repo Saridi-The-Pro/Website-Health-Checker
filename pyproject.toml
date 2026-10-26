@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A lightweight CLI tool to check website status and health"
 readme = "README.md"
 license = {file = "LICENSE"}
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 authors = [
     {name="Saridi", email="saridi.lim1103@gmail.com"}
 ]
