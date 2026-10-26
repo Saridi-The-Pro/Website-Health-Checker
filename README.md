@@ -1,5 +1,6 @@
 # Website Health Checker
 [![CI Test](https://github.com/Saridi-The-Pro/Website-Health-Checker/actions/workflows/ci-test.yml/badge.svg)](https://github.com/Saridi-The-Pro/Website-Health-Checker/actions/workflows/ci-test.yml)
+
 A lightweight and efficient Python CLI tool to monitor website availability, response times, and HTTP status codes.
 
 ## Overview
